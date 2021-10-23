@@ -1,6 +1,13 @@
-import WrapperRoot from '@/components/ui/Wrapper/WrapperRoot';
+import React from 'react';
 
-function Wrapper(props) {
+import WrapperRoot from './WrapperRoot';
+
+interface WrapperProps {
+  className?: string,
+  children?: React.ReactNode,
+}
+
+const Wrapper: React.FC<WrapperProps> = (props) => {
   const {
     className: mix,
     children,
@@ -14,6 +21,6 @@ function Wrapper(props) {
       {children}
     </WrapperRoot>
   );
-}
+};
 
 export default Wrapper;

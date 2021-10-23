@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 import { rgba } from 'polished';
 
-const createDoubleOutline = (color) => {
+const createDoubleOutline = (color: string) => {
   return `
     inset 0 0 0 2px ${color},
     0 0 0 4px ${rgba(color, 0.25)}
   `;
 };
 
-const TextFieldInput = styled.input`
+const TextFieldInput = styled.input<{ isError: boolean }>`
   font: inherit;
   color: ${({ theme }) => theme.color.text};
   background-color: ${({ theme }) => theme.color.background};
@@ -29,7 +29,7 @@ const TextFieldInput = styled.input`
   }
 
   &:focus {
-    box-shadow: ${({ error, theme }) => error
+    box-shadow: ${({ isError, theme }) => isError
       ? createDoubleOutline(theme.color.error)
       : createDoubleOutline(theme.color.primary)};
   }

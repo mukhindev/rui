@@ -1,19 +1,39 @@
+const { aliases } = require('./package.json');
+
 module.exports = {
   env: {
     browser: true,
     es2021: true,
-    node: true,
   },
-  extends: [
-    'airbnb',
-    'airbnb/hooks',
-    'plugin:react/recommended',
+  plugins: [
+    'react',
+    '@typescript-eslint',
   ],
+  extends: [
+    'plugin:react/recommended',
+    'airbnb',
+  ],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
     ecmaVersion: 12,
     sourceType: 'module',
   },
+  settings: {
+    'import/resolver': {
+      typescript: aliases,
+    },
+  },
   rules: {
+    'no-use-before-define': 'off',
+    '@typescript-eslint/no-use-before-define': ['error'],
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': ['error'],
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': ['error'],
+    'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
     indent: ['error', 2, { ignoredNodes: ['TemplateLiteral *'] }],
     'no-confusing-arrow': 'off',
     'react/jsx-uses-react': 'off',
@@ -26,14 +46,6 @@ module.exports = {
     'prefer-destructuring': 'off',
     'react/jsx-props-no-spreading': 'off',
     'import/no-extraneous-dependencies': 'off',
-  },
-  settings: {
-    'import/resolver': {
-      alias: {
-        map: [
-          ['@', './src'],
-        ],
-      },
-    },
+    'react/require-default-props': 'off',
   },
 };

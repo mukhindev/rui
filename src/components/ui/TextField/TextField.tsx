@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { v4 as uuid } from 'uuid';
 
 import TextFieldRoot from './TextFieldRoot';
@@ -6,9 +6,22 @@ import TextFieldLabel from './TextFieldLabel';
 import TextFieldInput from './TextFieldInput';
 import TextFieldError from './TextFieldError';
 
-function TextField(props) {
+interface TextFieldProps {
+  className?: string,
+  label?: string,
+  value: string,
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void,
+  error?: string
+}
+
+const TextField: React.FC<TextFieldProps> = (props) => {
   const {
-    className: mix, label, value, onChange, error, ...other
+    className: mix,
+    label,
+    value,
+    onChange,
+    error,
+    ...other
   } = props;
   const id = useMemo(uuid, []);
 
@@ -18,7 +31,7 @@ function TextField(props) {
       className={mix}
     >
       {label && (
-        <TextFieldLabel htmlFor={id} error={!!error}>
+        <TextFieldLabel htmlFor={id} isError={!!error}>
           {label}
         </TextFieldLabel>
       )}
@@ -26,12 +39,12 @@ function TextField(props) {
         value={value}
         id={id}
         onChange={onChange}
-        error={!!error}
+        isError={!!error}
         {...other}
       />
       {error && <TextFieldError>{error}</TextFieldError>}
     </TextFieldRoot>
   );
-}
+};
 
 export default TextField;
