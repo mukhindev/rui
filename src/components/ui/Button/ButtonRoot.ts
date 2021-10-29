@@ -1,14 +1,12 @@
 import styled from 'styled-components';
-import { rgba, lighten, darken } from 'polished';
+import { lighten, darken } from 'polished';
+import { makeDoubleOutline } from '@/styled-tools/makeDoubleOutline';
 
-const createDoubleOutline = (color: string) => {
-  return `
-    inset 0 0 0 2px ${color},
-    0 0 0 4px ${rgba(color, 0.25)}
-  `;
-};
+export interface ButtonRootStyledOptions {
+  variant?: 'filled' | 'outline'
+}
 
-const ButtonRoot = styled.button`
+const ButtonRoot = styled.button<ButtonRootStyledOptions>`
   font: inherit;
   color: ${({ theme }) => theme.color.white};
   background-color: ${({ theme }) => theme.color.primary};
@@ -17,7 +15,7 @@ const ButtonRoot = styled.button`
   flex-shrink: 0;
   padding: 0 0.75rem;
   border: 0;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   outline: none;
   transition-property: color, background-color, box-shadow, opacity;
   transition-duration: 0.15s;
@@ -28,7 +26,7 @@ const ButtonRoot = styled.button`
   }
 
   &:focus {
-    box-shadow: ${({ theme }) => createDoubleOutline(theme.color.primary)};
+    ${({ theme }) => makeDoubleOutline(theme.color.primary)};
   }
 
   &:active {
@@ -40,5 +38,10 @@ const ButtonRoot = styled.button`
     cursor: default;
   }
 `;
+
+ButtonRoot.defaultProps = {
+  type: 'button',
+  variant: 'filled',
+};
 
 export default ButtonRoot;

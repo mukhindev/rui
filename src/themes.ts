@@ -23,9 +23,9 @@ export const themes = {
       black: '#000',
       text: '#fff',
       background: '#000',
-      border: '#cecece',
-      primary: '#48a0ff',
-      error: '#ff541e',
+      border: '#444444',
+      primary: '#2c4988',
+      error: '#d52c2c',
     },
   },
 };

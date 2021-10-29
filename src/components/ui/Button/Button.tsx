@@ -1,11 +1,12 @@
 import React from 'react';
 
-import ButtonRoot from './ButtonRoot';
+import ButtonRoot, { ButtonRootStyledOptions } from './ButtonRoot';
 
-interface ButtonProps {
+type ButtonStyledOptions = ButtonRootStyledOptions;
+
+interface ButtonProps extends ButtonStyledOptions {
   className?: string,
   children: React.ReactNode,
-  type?: 'button' | 'submit' | 'reset',
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void,
 }
 
@@ -13,8 +14,6 @@ const Button: React.FC<ButtonProps> = (props) => {
   const {
     className: mix,
     children,
-    type = 'button',
-    onClick,
     ...other
   } = props;
 
@@ -22,8 +21,6 @@ const Button: React.FC<ButtonProps> = (props) => {
     <ButtonRoot
       data-semantics={Button.name}
       className={mix}
-      type={type}
-      onClick={onClick}
       {...other}
     >
       {children}

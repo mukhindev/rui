@@ -1,12 +1,5 @@
 import styled from 'styled-components';
-import { rgba } from 'polished';
-
-const createDoubleOutline = (color: string) => {
-  return `
-    inset 0 0 0 2px ${color},
-    0 0 0 4px ${rgba(color, 0.25)}
-  `;
-};
+import { makeDoubleOutline } from '@/styled-tools/makeDoubleOutline';
 
 const TextFieldInput = styled.input<{ isError: boolean }>`
   font: inherit;
@@ -25,13 +18,13 @@ const TextFieldInput = styled.input<{ isError: boolean }>`
   transition-duration: 0.15s;
 
   &:hover {
-    box-shadow: ${({ theme }) => createDoubleOutline(theme.color.border)};
+    ${({ theme }) => makeDoubleOutline(theme.color.border)};
   }
 
   &:focus {
-    box-shadow: ${({ isError, theme }) => isError
-      ? createDoubleOutline(theme.color.error)
-      : createDoubleOutline(theme.color.primary)};
+    ${({ isError, theme }) => isError
+      ? makeDoubleOutline(theme.color.error)
+      : makeDoubleOutline(theme.color.primary)};
   }
 `;
 
