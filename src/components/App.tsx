@@ -9,6 +9,7 @@ import Button from '@/components/ui/Button';
 
 import A from '@/components/demos/A';
 import B from '@/components/demos/B';
+import C from '@/components/demos/C';
 
 const PageWrapper = styled(Wrapper)`
   height: 100%;
@@ -43,6 +44,7 @@ function App() {
 
         <A />
         <B />
+        <C />
       </PageWrapper>
     </ThemeProvider>
   );

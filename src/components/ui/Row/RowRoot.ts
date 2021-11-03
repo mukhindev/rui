@@ -12,8 +12,8 @@ const RowRoot = styled.div<RowRootStyledOptions>`
   position: relative;
   display: flex;
   align-items: ${({ alignItems }) => formatCSSUnit(alignItems)};
-  justify-content: ${({ justifyContent }) => formatCSSUnit(justifyContent)};;
-  gap: ${({ gap }) => formatCSSUnit(gap)}
+  justify-content: ${({ justifyContent }) => formatCSSUnit(justifyContent)};
+  gap: ${({ gap }) => formatCSSUnit(gap)};
 `;
 
 RowRoot.defaultProps = {

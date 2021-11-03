@@ -22,6 +22,7 @@ const TransitionWrapper: React.FC<TransitionWrapperProps> = (props) => {
     max,
     children,
     duration,
+    ...other
   } = props;
 
   const [height, setHeight] = useState(min);
@@ -46,6 +47,7 @@ const TransitionWrapper: React.FC<TransitionWrapperProps> = (props) => {
       className={mix}
       style={{ height }}
       duration={duration}
+      {...other}
     >
       <div ref={getChildrenRef}>{children}</div>
     </TransitionWrapperRoot>
