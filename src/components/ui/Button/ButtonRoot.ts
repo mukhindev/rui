@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { lighten, darken } from 'polished';
 import { makeDoubleOutline } from '@/styled-tools/makeDoubleOutline';
+import { chooseContrastingColor } from '@/styled-tools/chooseContrastingColor';
 
 export interface ButtonRootStyledOptions {
   variant?: 'filled' | 'outline'
@@ -8,7 +9,10 @@ export interface ButtonRootStyledOptions {
 
 const ButtonRoot = styled.button<ButtonRootStyledOptions>`
   font: inherit;
-  color: ${({ theme }) => theme.color.white};
+  color: ${({ theme }) => chooseContrastingColor(
+    [theme.color.white, theme.color.black],
+    theme.color.primary,
+  )};
   background-color: ${({ theme }) => theme.color.primary};
   box-sizing: border-box;
   height: 2.5rem;
