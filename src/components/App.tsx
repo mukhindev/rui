@@ -7,10 +7,11 @@ import Wrapper from '@/components/ui/Wrapper';
 import Row from '@/components/ui/Row';
 import Button from '@/components/ui/Button';
 
-import A from '@/components/demos/A';
-import B from '@/components/demos/B';
-import C from '@/components/demos/C';
-import D from '@/components/demos/D';
+import DemoTextField from '@/components/demos/DemoTextField';
+import DemoButton from '@/components/demos/DemoButton';
+import DemoTransitionWrapper from '@/components/demos/DemoTransitionWrapper';
+import DemoTable from '@/components/demos/DemoTable';
+import Heading from '@/components/ui/Heading';
 
 const PageWrapper = styled(Wrapper)`
   height: 100%;
@@ -38,15 +39,16 @@ function App() {
           alignItems="center"
           justifyContent="space-between"
         >
+          <Heading h1 noMargin>rui</Heading>
           <Button onClick={handleTheme}>
             Сменить тему
           </Button>
         </HeaderWrapper>
 
-        <A />
-        <B />
-        <C />
-        <D />
+        <DemoTextField />
+        <DemoButton />
+        <DemoTransitionWrapper />
+        <DemoTable />
       </PageWrapper>
     </ThemeProvider>
   );

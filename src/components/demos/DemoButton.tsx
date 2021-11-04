@@ -1,12 +1,16 @@
 import React from 'react';
 
-import DemoWrapper from '@/components/demos/DemoWrapper';
+import DemoWrapper from '@/components/shared/DemoWrapper';
+
+import Heading from '@/components/ui/Heading';
 import Button from '@/components/ui/Button';
 import Row from '@/components/ui/Row';
 
-function B() {
+function DemoButton() {
   return (
     <DemoWrapper>
+      <Heading h2>Button</Heading>
+
       <Row gap={1}>
         <Button>
           Кнопка 1
@@ -22,4 +26,4 @@ function B() {
   );
 }
 
-export default B;
+export default DemoButton;

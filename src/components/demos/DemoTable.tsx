@@ -1,7 +1,10 @@
 import React from 'react';
 
-import DemoWrapper from '@/components/demos/DemoWrapper';
+import DemoWrapper from '@/components/shared/DemoWrapper';
+
+import Heading from '@/components/ui/Heading';
 import Row from '@/components/ui/Row';
+import Button from '@/components/ui/Button';
 
 import Table, {
   TableMap,
@@ -9,7 +12,6 @@ import Table, {
   TableCell,
   TableHeadRow,
 } from '@/components/ui/Table';
-import Button from '@/components/ui/Button';
 
 type User = {
   id: number,
@@ -37,10 +39,12 @@ const orders: Order[] = [
   /* eslint-enable no-console */
 ];
 
-function D() {
+function DemoTable() {
   return (
     <DemoWrapper>
-      <Row gap={2}>
+      <Heading h2>Table</Heading>
+
+      <Row gap={2} alignItems="flex-start">
         <Table data={users}>
           <TableHeadRow>
             <TableCell>
@@ -91,4 +95,4 @@ function D() {
   );
 }
 
-export default D;
+export default DemoTable;

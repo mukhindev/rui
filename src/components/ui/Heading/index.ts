@@ -1,3 +1,3 @@
-import Row from './Row';
+import Heading from './Heading';
 
-export default Row;
+export default Heading;
