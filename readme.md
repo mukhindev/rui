@@ -2,6 +2,8 @@
 
 <ins>R</ins>eact <ins>UI</ins>
 
+Demo: https://mukhindev.github.io/rui/
+
 ## Что это?
 
 rui — минималистичный ui-kit для React, использующий [`styled-components`](https://styled-components.com/).
