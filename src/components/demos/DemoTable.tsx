@@ -44,7 +44,7 @@ function DemoTable() {
     <DemoWrapper>
       <Heading h2>Table</Heading>
 
-      <Row gap={2} alignItems="flex-start">
+      <Row alignItems="flex-start" flexWrap="wrap">
         <Table data={users}>
           <TableHeadRow>
             <TableCell>

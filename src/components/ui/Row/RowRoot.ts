@@ -5,10 +5,12 @@ import { formatCSSUnit } from '@/utils';
 export interface RowRootStyledOptions {
   alignItems?: CSSProperties['alignItems']
   justifyContent?: CSSProperties['justifyContent']
+  flexWrap?: CSSProperties['flexWrap']
   gap?: CSSUnit
 }
 
 const RowRoot = styled.div<RowRootStyledOptions>`
+  flex-wrap: ${({ flexWrap }) => formatCSSUnit(flexWrap)};
   position: relative;
   display: flex;
   align-items: ${({ alignItems }) => formatCSSUnit(alignItems)};
@@ -17,6 +19,7 @@ const RowRoot = styled.div<RowRootStyledOptions>`
 `;
 
 RowRoot.defaultProps = {
+  flexWrap: 'nowrap',
   alignItems: 'center',
   justifyContent: 'flex-start',
   gap: '1rem',
