@@ -27,6 +27,7 @@ module.exports = {
     },
   },
   rules: {
+    'react/jsx-one-expression-per-line': 'off',
     'react/no-array-index-key': 'off',
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': ['error'],

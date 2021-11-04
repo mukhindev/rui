@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "aliases": {
     "@": "src"
@@ -34,6 +35,7 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.26.1",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "gh-pages": "^3.2.3",
     "typescript": "^4.3.2",
     "vite": "^2.6.4"
   }
