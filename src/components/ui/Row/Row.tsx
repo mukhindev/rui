@@ -2,9 +2,9 @@ import React from 'react';
 
 import RowRoot, { RowRootStyledOptions } from './RowRoot';
 
-type ButtonStyledOptions = RowRootStyledOptions;
+type RowStyledOptions = RowRootStyledOptions;
 
-interface RowProps extends ButtonStyledOptions {
+interface RowProps extends RowStyledOptions {
   className?: string,
   children?: React.ReactNode,
 }

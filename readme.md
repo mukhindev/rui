@@ -32,6 +32,33 @@ rui — минималистичный ui-kit для React, использующ
 
 - [ ] Table
 
+## Компоненты
+
+### Table
+
+```jsx
+const data = [
+  { id: 1, name: 'Сергей', job: 'Фронтенд-разработчик' },
+  { id: 5, name: 'Максим', job: 'Начальник цеха' },
+  { id: 7, name: 'Александр', job: 'Директор' },
+];
+
+<Table data={data}>
+  <TableRow>
+    <TableCell>ID</TableCell>
+    <TableCell>Имя</TableCell>
+    <TableCell>Работа</TableCell>
+  </TableRow>
+  <TableMap>
+    <TableRow>
+      <TableCell>{(value) => value.id}</TableCell>
+      <TableCell>{(value) => value.name}</TableCell>
+      <TableCell>{(value) => value.job}</TableCell>
+    </TableRow>
+  </TableMap>
+</Table>
+```
+
 ## Особенности
 
 ### data-semantics
