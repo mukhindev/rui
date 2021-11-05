@@ -1,0 +1,43 @@
+import TransitionWrapperExample from './TransitionWrapperExample';
+
+## TransitionWrapper
+
+<TransitionWrapperExample />
+
+```jsx
+
+import { useState } from 'react';
+
+import Row from '@mukhindev/rui/Row';
+import TransitionWrapper from '@mukhindev/rui/TransitionWrapper';
+import Button from '@mukhindev/rui/Button';
+
+const shortText = 'Это короткий текст. Нажмите кнопку "Сменить текст"';
+
+const longText = `
+  А это длинный текст. И его явно больше, чем было. Контейнер c текстом резко увеличивается в высоте,
+  но обёртка <TransitionWrapper> позволяет не дёргаться резко общему потоку
+`;
+
+function MyComponent() {
+  const [text, setText] = useState(shortText);
+
+  const handleToggleText = () => {
+    setText(text === shortText ? longText : shortText);
+  };
+
+  return (
+    <Row gap={1} alignItems="flex-start">
+      <TransitionWrapper>
+        {text}
+      </TransitionWrapper>
+      <TransitionWrapper overflow="hidden" duration={1}>
+        {text}
+      </TransitionWrapper>
+      <Button onClick={handleToggleText}>Сменить текст</Button>
+    </Row>
+  );
+}
+
+export default MyComponent;
+```

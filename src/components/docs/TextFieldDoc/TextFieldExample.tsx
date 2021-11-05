@@ -4,9 +4,6 @@ import isEmpty from 'validator/es/lib/isEmpty';
 import styled from 'styled-components';
 import { ThemeType } from '@/themes';
 
-import DemoWrapper from '@/components/shared/DemoWrapper';
-
-import Heading from '@/components/ui/Heading';
 import TransitionWrapper from '@/components/ui/TransitionWrapper';
 import TextField, { TextFieldInput } from '@/components/ui/TextField';
 
@@ -22,25 +19,21 @@ const StyledTextField = styled(TextField)`
   }
 `;
 
-function DemoTextField() {
+function TextFieldExample() {
   const [email, setEmail] = useState('');
 
   const error = !isEmpty(email) && (isEmail(email) ? '' : 'Напишите в формате email');
 
   return (
-    <DemoWrapper>
-      <Heading h2>TextField</Heading>
-
-      <TransitionWrapper>
-        <StyledTextField
-          label="Электронная почта"
-          value={email}
-          error={error || ''}
-          onChange={(evt) => setEmail(evt.target.value)}
-        />
-      </TransitionWrapper>
-    </DemoWrapper>
+    <TransitionWrapper>
+      <StyledTextField
+        label="Электронная почта"
+        value={email}
+        error={error || ''}
+        onChange={(evt) => setEmail(evt.target.value)}
+      />
+    </TransitionWrapper>
   );
 }
 
-export default DemoTextField;
+export default TextFieldExample;

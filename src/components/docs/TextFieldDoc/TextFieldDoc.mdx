@@ -1,0 +1,44 @@
+import TextFieldExample from './TextFieldExample';
+
+## TextField
+
+<TextFieldExample />
+
+```jsx
+import { useState } from 'react';
+import styled from 'styled-components';
+
+import TransitionWrapper from '@mukhindev/rui/TransitionWrapper';
+// Импортируем TextField, и его составную часть TextFieldInput (<input>)
+import TextField, { TextFieldInput } from '@mukhindev/rui/TextField';
+
+// Стилизация корневого элемента TextField
+const StyledTextField = styled(TextField)`
+  margin-bottom: 32px;
+
+  /* Стилизация TextFieldInput в компоненте TextField */
+  ${TextFieldInput} {
+    color: ${({ theme }) => (theme.type === 'dark' ? '#ffbd1b' : '')};
+  }
+`;
+
+function MyComponent() {
+  const [email, setEmail] = useState('');
+
+  // Проверка на пустоту и формат email
+  const error = !isEmpty(email) && (isEmail(email) ? '' : 'Напишите в формате email');
+
+  return (
+    <TransitionWrapper>
+      <StyledTextField
+        label="Электронная почта"
+        value={email}
+        error={error || ''}
+        onChange={(evt) => setEmail(evt.target.value)}
+      />
+    </TransitionWrapper>
+  );
+}
+
+export default MyComponent;
+```

@@ -1,39 +1,3 @@
-# rui
-
-<ins>R</ins>eact <ins>UI</ins>
-
-Стенд компонентов: https://mukhindev.github.io/rui/
-
-## Что это?
-
-rui — минималистичный ui-kit для React, использующий [`styled-components`](https://styled-components.com/).
-
-## Без гарантий
-
-Делаю для себя, в свободное от работы время. Никаких гарантий.
-
-## Что есть/планируется?
-
-### Сетка
-
-- [X] Wrapper
-- [X] Row
-- [ ] Column
-- [ ] Grid
-
-### Форма
-
-- [X] Button
-- [X] TextField
-
-### Хелперы
-
-- [x] TransitionWrapper
-
-### Прочее
-
-- [x] Table
-
 ## Особенности
 
 ### data-semantics
@@ -57,7 +21,7 @@ rui — минималистичный ui-kit для React, использующ
 Поэтому, если передавать в значения числа, по-умолчанию это будут `rem`-единицы.
 
 При работе с макетами могут понадобиться `px`, но хочется сохранить способности `rem`-единиц.
-Достаточно необходимое кол-во `px` разделить на размер шрифта документа. 
+Достаточно необходимое кол-во `px` разделить на размер шрифта документа.
 Чтобы делать это более удобно, можно передавать строку в формате `24/16`,
 например в данном случаи результатом будет `1.5rem`.
 
@@ -72,12 +36,11 @@ rui — минималистичный ui-kit для React, использующ
 TextFieldRoot не экспортируется, так как это корневой элемент и на него стилизация и так попадёт через `className`.
 
 ```jsx
-import React from 'react';
 // Импортируем TextField, и его составную часть TextFieldInput (<input>)
 import TextField, { TextFieldInput } from '@/components/ui/TextField';
 
 // Стилизация корневого элемента TextField
-const EmailTextField = styled(TextField)`
+const StyledTextField = styled(TextField)`
   margin-bottom: 32px;
 
   /* Стилизация TextFieldInput в компоненте TextField */
@@ -86,16 +49,11 @@ const EmailTextField = styled(TextField)`
   }
 `;
 
-function App() {
+function MyComponent() {
   return (
     <div>
-      <EmailTextField label="Электронная почта" />
-      <Button>Отправить</Button>
+      <StyledTextField label="Email" />
     </div>
   );
 }
 ```
-
-## Todo
-
-Опубликовать на `npm` как будут готовы базовые компоненты

@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-import DemoWrapper from '@/components/shared/DemoWrapper';
-
-import Heading from '@/components/ui/Heading';
 import Button from '@/components/ui/Button';
 import TransitionWrapper from '@/components/ui/TransitionWrapper';
 import Row from '@/components/ui/Row';
@@ -22,7 +19,7 @@ const StyledTransitionWrapper = styled(TransitionWrapper)`
   border-radius: 0.25rem;
 `;
 
-function DemoTransitionWrapper() {
+function TransitionWrapperExample() {
   const [text, setText] = useState(shortText);
 
   const handleToggleText = () => {
@@ -30,20 +27,16 @@ function DemoTransitionWrapper() {
   };
 
   return (
-    <DemoWrapper>
-      <Heading h2>TransitionWrapper</Heading>
-
-      <Row gap={1} alignItems="flex-start">
-        <StyledTransitionWrapper>
-          {text}
-        </StyledTransitionWrapper>
-        <StyledTransitionWrapper overflow="hidden" duration={1}>
-          {text}
-        </StyledTransitionWrapper>
-        <Button onClick={handleToggleText}>Сменить текст</Button>
-      </Row>
-    </DemoWrapper>
+    <Row gap={1} alignItems="flex-start">
+      <StyledTransitionWrapper>
+        {text}
+      </StyledTransitionWrapper>
+      <StyledTransitionWrapper overflow="hidden" duration={1}>
+        {text}
+      </StyledTransitionWrapper>
+      <Button onClick={handleToggleText}>Сменить текст</Button>
+    </Row>
   );
 }
 
-export default DemoTransitionWrapper;
+export default TransitionWrapperExample;

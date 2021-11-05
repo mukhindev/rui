@@ -1,5 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import mdx from 'vite-plugin-mdx';
+import highlight from 'remark-prism';
 import path from 'path';
 import { aliases } from './package.json';
 
@@ -16,8 +18,18 @@ export default defineConfig({
   base: '/rui/',
   plugins: [
     react(),
+    mdx({
+      remarkPlugins: [
+        highlight,
+      ],
+    }),
   ],
   resolve: {
     alias: getAliases(),
+    conditions: [
+      'import',
+      'module',
+      'browser',
+    ],
   },
 });

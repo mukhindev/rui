@@ -7,11 +7,14 @@ import Wrapper from '@/components/ui/Wrapper';
 import Row from '@/components/ui/Row';
 import Button from '@/components/ui/Button';
 
-import DemoTextField from '@/components/demos/DemoTextField';
-import DemoButton from '@/components/demos/DemoButton';
-import DemoTransitionWrapper from '@/components/demos/DemoTransitionWrapper';
-import DemoTable from '@/components/demos/DemoTable';
 import Heading from '@/components/ui/Heading';
+import Markdown from '@/components/shared/Markdown';
+
+import PeculiaritiesDoc from '@/components/docs/PeculiaritiesDoc';
+import ButtonDoc from '@/components/docs/ButtonDoc';
+import TableDoc from '@/components/docs/TableDoc';
+import TextFieldDoc from '@/components/docs/TextFieldDoc';
+import TransitionWrapperDoc from '@/components/docs/TransitionWrapperDoc';
 
 const PageWrapper = styled(Wrapper)`
   height: 100%;
@@ -22,7 +25,15 @@ const PageWrapper = styled(Wrapper)`
 `;
 
 const HeaderWrapper = styled(Row)`
-  padding: 2rem;
+  padding: 2rem 2rem 0;
+  max-width: 1024px;
+  margin: auto;
+`;
+
+const DemoWrapper = styled(Wrapper)`
+  padding: 0 2rem 2rem;
+  max-width: 1024px;
+  margin: auto;
 `;
 
 function App() {
@@ -45,10 +56,15 @@ function App() {
           </Button>
         </HeaderWrapper>
 
-        <DemoTextField />
-        <DemoButton />
-        <DemoTransitionWrapper />
-        <DemoTable />
+        <DemoWrapper>
+          <Markdown>
+            <PeculiaritiesDoc />
+            <TextFieldDoc />
+            <ButtonDoc />
+            <TransitionWrapperDoc />
+            <TableDoc />
+          </Markdown>
+        </DemoWrapper>
       </PageWrapper>
     </ThemeProvider>
   );
