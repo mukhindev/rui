@@ -33,7 +33,7 @@ const Table: React.FC<TableProps> = (props) => {
 
   return (
     <TableRoot
-      data-semantics={Table.name}
+      data-semantics="table"
       className={mix}
       {...other}
     >

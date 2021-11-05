@@ -27,13 +27,12 @@ const lightStyles = css`
 
 const darkStyles = css`
   & pre {
-    background: #f3f3f3;
-    color: #000000;
-  }
-
-  & pre {
     background: #141414;
     color: #D4D4D4;
+  }
+
+  & code {
+    background-color: #3b3b3b;
   }
 
   & code[class*="language-"] {
@@ -52,6 +51,8 @@ export interface MarkdownRootStyledOptions {
 }
 
 const MarkdownRoot = styled.div<MarkdownRootStyledOptions>`
+  line-height: 1.5;
+
   & h1 {
     ${baseHeadingStyles};
     font-size: 2.5rem;
@@ -69,6 +70,7 @@ const MarkdownRoot = styled.div<MarkdownRootStyledOptions>`
 
   & pre {
     font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+    line-height: 1.3;
     padding: 16px;
     margin: 16px 0;
     overflow: auto;
@@ -89,11 +91,12 @@ const MarkdownRoot = styled.div<MarkdownRootStyledOptions>`
   & code {
     font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
     font-size: 14px;
-    padding: 0;
+    padding: 2px 6px;
     border-radius: 0.25rem;
   }
 
   & code[class*="language-"] {
+    padding: 0;
     font-size: 12px;
     line-height: 1.375;
     background-color: transparent;
@@ -108,13 +111,16 @@ const MarkdownRoot = styled.div<MarkdownRootStyledOptions>`
     }
   }
 
-  & .token.comment, & .token.prolog, & .token.doctype, & .token.cdata { color: var(--code-comment); }
-  & .token.keyword { color: var(--code-keyword); }
-  & .token.variable { color: var(--code-variable); }
-  & .token.number { color: var(--code-number); }
-  & .token.string { color: var(--code-string); }
-  & .token.function, & .token.class-name { color: var(--code-function); }
-  & .token.builtin { color: var(--code-class); }
+  & .token {
+    &.comment, &.prolog, &.doctype, &.cdata { color: var(--code-comment); }
+    &.keyword, &.tag, &.class-name { color: var(--code-keyword); }
+    &.variable, &.maybe-class-name, &.attr-name { color: var(--code-variable); }
+    &.parameter { color: var(--code-variable); font-style: italic; }
+    &.number { color: var(--code-number); }
+    &.string, &.attr-value { color: var(--code-string); }
+    &.function { color: var(--code-function); }
+    &.builtin { color: var(--code-class); }
+  }
 `;
 
 export default MarkdownRoot;

@@ -20,7 +20,7 @@ const Markdown: React.FC<MarkdownProps> = (props) => {
 
   return (
     <MarkdownRoot
-      data-semantics={Markdown.name}
+      data-semantics="markdown"
       className={mix}
       // TODO: Описать тип для темы
       // @ts-ignore

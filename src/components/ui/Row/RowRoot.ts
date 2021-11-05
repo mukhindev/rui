@@ -10,7 +10,7 @@ export interface RowRootStyledOptions {
 }
 
 const RowRoot = styled.div<RowRootStyledOptions>`
-  flex-wrap: ${({ flexWrap }) => formatCSSUnit(flexWrap)};
+  flex-wrap: ${({ flexWrap }) => flexWrap ? 'wrap' : 'no-wrap'};
   position: relative;
   display: flex;
   align-items: ${({ alignItems }) => formatCSSUnit(alignItems)};

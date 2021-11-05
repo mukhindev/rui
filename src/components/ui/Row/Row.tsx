@@ -18,7 +18,7 @@ const Row: React.FC<RowProps> = (props) => {
 
   return (
     <RowRoot
-      data-semantics={Row.name}
+      data-semantics="row"
       className={mix}
       {...other}
     >

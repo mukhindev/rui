@@ -10,11 +10,11 @@ import Button from '@/components/ui/Button';
 import Heading from '@/components/ui/Heading';
 import Markdown from '@/components/shared/Markdown';
 
-import PeculiaritiesDoc from '@/components/docs/PeculiaritiesDoc';
-import ButtonDoc from '@/components/docs/ButtonDoc';
-import TableDoc from '@/components/docs/TableDoc';
-import TextFieldDoc from '@/components/docs/TextFieldDoc';
-import TransitionWrapperDoc from '@/components/docs/TransitionWrapperDoc';
+import TextFieldStand from '@/components/docs/TextFieldStand.mdx';
+import ButtonStand from '@/components/docs/ButtonStand.mdx';
+import TransitionWrapperStand from '@/components/docs/TransitionWrapperStand.mdx';
+import TableStand from '@/components/docs/TableStand.mdx';
+import Peculiarities from '@/components/docs/Peculiarities.mdx';
 
 const PageWrapper = styled(Wrapper)`
   height: 100%;
@@ -30,14 +30,14 @@ const HeaderWrapper = styled(Row)`
   margin: auto;
 `;
 
-const DemoWrapper = styled(Wrapper)`
+const BodyWrapper = styled(Wrapper)`
   padding: 0 2rem 2rem;
   max-width: 1024px;
   margin: auto;
 `;
 
 function App() {
-  const [theme, setTheme] = useState(ThemeType.Dark);
+  const [theme, setTheme] = useState(ThemeType.Light);
 
   const handleTheme = () => {
     setTheme(theme === ThemeType.Light ? ThemeType.Dark : ThemeType.Light);
@@ -56,15 +56,15 @@ function App() {
           </Button>
         </HeaderWrapper>
 
-        <DemoWrapper>
+        <BodyWrapper>
           <Markdown>
-            <PeculiaritiesDoc />
-            <TextFieldDoc />
-            <ButtonDoc />
-            <TransitionWrapperDoc />
-            <TableDoc />
+            <TextFieldStand />
+            <ButtonStand />
+            <TransitionWrapperStand />
+            <TableStand />
+            <Peculiarities />
           </Markdown>
-        </DemoWrapper>
+        </BodyWrapper>
       </PageWrapper>
     </ThemeProvider>
   );

@@ -43,7 +43,7 @@ const TransitionWrapper: React.FC<TransitionWrapperProps> = (props) => {
 
   return (
     <TransitionWrapperRoot
-      data-semantics={TransitionWrapper.name}
+      data-semantics="transition-wrapper"
       className={mix}
       style={{ height }}
       duration={duration}

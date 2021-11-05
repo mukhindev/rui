@@ -32,7 +32,7 @@ const Heading: React.FC<HeadingProps> = (props) => {
 
   return (
     <HeadingRootComponent
-      data-semantics={Heading.name}
+      data-semantics="heading"
       className={mix}
       {...other}
     >

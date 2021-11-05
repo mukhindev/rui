@@ -39,7 +39,7 @@ const TableCell: React.FC<TableCellProps> = (props) => {
 
   return (
     <TableCellRoot
-      data-semantics={TableCell.name}
+      data-semantics="table-cell"
       className={mix}
       ref={handleCellRef}
       style={{ width }}

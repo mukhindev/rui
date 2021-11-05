@@ -28,7 +28,7 @@ const TextField: React.FC<TextFieldProps> = (props) => {
 
   return (
     <TextFieldRoot
-      data-semantics={TextField.name}
+      data-semantics="text-field"
       className={mix}
     >
       {label && (

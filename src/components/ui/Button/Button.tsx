@@ -19,7 +19,7 @@ const Button: React.FC<ButtonProps> = (props) => {
 
   return (
     <ButtonRoot
-      data-semantics={Button.name}
+      data-semantics="button"
       className={mix}
       {...other}
     >

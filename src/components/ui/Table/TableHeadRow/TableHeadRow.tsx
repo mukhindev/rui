@@ -16,7 +16,7 @@ const TableHeadRow: React.FC<TableHeadRowProps> = (props) => {
 
   return (
     <TableHeadRowRoot
-      data-semantics={TableHeadRow.name}
+      data-semantics="table-head-row"
       className={mix}
       {...other}
     >

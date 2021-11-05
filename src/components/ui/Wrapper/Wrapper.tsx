@@ -15,7 +15,7 @@ const Wrapper: React.FC<WrapperProps> = (props) => {
 
   return (
     <WrapperRoot
-      data-semantics={Wrapper.name}
+      data-semantics="wrapper"
       className={mix}
     >
       {children}

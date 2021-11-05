@@ -16,7 +16,7 @@ const TableMap: React.FC<TableMapProps> = (props) => {
 
   return (
     <div
-      data-semantics={TableMap.name}
+      data-semantics="table-map"
       className={mix}
       {...other}
     >

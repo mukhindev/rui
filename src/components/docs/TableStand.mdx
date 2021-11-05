@@ -1,6 +1,14 @@
-import TableExample from './TableExample';
+import TableExample from './examples/TableExample';
 
 ## Table
+
+Компонент таблицы с удобной итерацией.
+
+Не нужно использовать `map`, `Table` сам раздаст данные с помощью контекста.
+
+Передайте `массив` данных в корневой компонент `Table`,
+и используйте обёртку `TableMap` для итерируемой части таблицы.
+Опишите в ней шаблон строки таблицы, получая соответствующие данные в `TableCell`.
 
 <TableExample.Example1 />
 
@@ -34,6 +42,12 @@ function MyComponent() {
 
 export default MyComponent;
 ```
+
+### RenderProps
+
+Не важно сколько и какие сущности в данных. Колонки придумываете вы сами.
+Данные из контекста извлекаются используя паттерн [`RenderProps`](https://reactjs.org/docs/render-props.html#using-props-other-than-render),
+используйте его возможности.
 
 <TableExample.Example2 />
 

@@ -1,0 +1,36 @@
+import Row from '@/components/ui/Row';
+import Button from '@/components/ui/Button';
+
+## Button
+
+Компонент кнопки.
+
+### Row & Button
+
+Расположение кнопок в строку с отступами очень частая задача.
+Используйте `Row` и его пропс `gap` для настройки отступов.
+Укажите `flexWrap`, если необходимо,
+чтобы кнопки переносились на следующую строку если не хватает места.
+
+<Row gap={1} flexWrap>
+  <Button>Кнопка 1</Button>
+  <Button>Кнопка 2</Button>
+  <Button>Кнопка 3</Button>
+</Row>
+
+```jsx
+import Row from '@mukhindev/rui/Row';
+import Button from '@mukhindev/rui/Button';
+
+function MyComponent() {
+  return (
+    <Row gap={1} flexWrap>
+      <Button>Кнопка 1</Button>
+      <Button>Кнопка 2</Button>
+      <Button>Кнопка 3</Button>
+    </Row>
+  );
+}
+
+export default MyComponent;
+```
