@@ -74,13 +74,12 @@ var sa=Object.defineProperty,pa=Object.defineProperties;var oa=Object.getOwnProp
   }
 `,Ta=w`
   & pre {
-    background: #f3f3f3;
-    color: #000000;
-  }
-
-  & pre {
     background: #141414;
     color: #D4D4D4;
+  }
+
+  & code {
+    background-color: #3b3b3b;
   }
 
   & code[class*="language-"] {
@@ -93,6 +92,8 @@ var sa=Object.defineProperty,pa=Object.defineProperties;var oa=Object.getOwnProp
     --code-class: #4EC9B0;
   }
 `,Fa=m.div`
+  line-height: 1.5;
+
   & h1 {
     ${A};
     font-size: 2.5rem;
@@ -110,6 +111,7 @@ var sa=Object.defineProperty,pa=Object.defineProperties;var oa=Object.getOwnProp
 
   & pre {
     font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+    line-height: 1.3;
     padding: 16px;
     margin: 16px 0;
     overflow: auto;
@@ -130,11 +132,12 @@ var sa=Object.defineProperty,pa=Object.defineProperties;var oa=Object.getOwnProp
   & code {
     font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
     font-size: 14px;
-    padding: 0;
+    padding: 2px 6px;
     border-radius: 0.25rem;
   }
 
   & code[class*="language-"] {
+    padding: 0;
     font-size: 12px;
     line-height: 1.375;
     background-color: transparent;
@@ -150,7 +153,6 @@ var sa=Object.defineProperty,pa=Object.defineProperties;var oa=Object.getOwnProp
   }
 
   & .token {
-
     &.comment, &.prolog, &.doctype, &.cdata { color: var(--code-comment); }
     &.keyword, &.tag, &.class-name { color: var(--code-keyword); }
     &.variable, &.maybe-class-name, &.attr-name { color: var(--code-variable); }
@@ -159,9 +161,7 @@ var sa=Object.defineProperty,pa=Object.defineProperties;var oa=Object.getOwnProp
     &.string, &.attr-value { color: var(--code-string); }
     &.function { color: var(--code-function); }
     &.builtin { color: var(--code-class); }
-
   }
-
 `,va=e=>{const{className:n,children:t}=e,s=ra();return p(Fa,{"data-semantics":"markdown",className:n,theme:s.type,children:t})},Ba={},Aa="wrapper";function O(t){var s=t,{components:e}=s,n=N(s,["components"]);return a(Aa,i(c(c({},Ba),n),{components:e,mdxType:"MDXLayout"}),a("h2",null,"Button"),a(v,{gap:1,mdxType:"Row"},a(C,{mdxType:"Button"},"\u041A\u043D\u043E\u043F\u043A\u0430 1"),a(C,{mdxType:"Button"},"\u041A\u043D\u043E\u043F\u043A\u0430 2"),a(C,{mdxType:"Button"},"\u041A\u043D\u043E\u043F\u043A\u0430 3")),a("div",{className:"remark-highlight"},a("pre",{parentName:"div",className:"language-jsx"},a("code",{parentName:"pre",className:"language-jsx"},a("span",{parentName:"code",className:"token keyword module"},"import")," ",a("span",{parentName:"code",className:"token imports"},a("span",{parentName:"span",className:"token maybe-class-name"},"Row"))," ",a("span",{parentName:"code",className:"token keyword module"},"from")," ",a("span",{parentName:"code",className:"token string"},"'@mukhindev/rui/Row'"),a("span",{parentName:"code",className:"token punctuation"},";"),`
 `,a("span",{parentName:"code",className:"token keyword module"},"import")," ",a("span",{parentName:"code",className:"token imports"},a("span",{parentName:"span",className:"token maybe-class-name"},"Button"))," ",a("span",{parentName:"code",className:"token keyword module"},"from")," ",a("span",{parentName:"code",className:"token string"},"'@mukhindev/rui/Button'"),a("span",{parentName:"code",className:"token punctuation"},";"),`
 
