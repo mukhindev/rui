@@ -9,11 +9,23 @@ export interface ButtonRootStyledOptions {
 
 const ButtonRoot = styled.button<ButtonRootStyledOptions>`
   font: inherit;
-  color: ${({ theme }) => chooseContrastingColor(
-    [theme.color.white, theme.color.black],
-    theme.color.primary,
-  )};
-  background-color: ${({ theme }) => theme.color.primary};
+  ${({ variant, theme }) => variant && ({
+    filled: `
+      color: ${chooseContrastingColor(
+        [theme.color.white, theme.color.black],
+        theme.color.primary,
+      )};
+      background-color: ${theme.color.primary};
+    `,
+    outline: `
+      color: ${theme.color.primary};
+      background-color: transparent;
+      ${makeDoubleOutline({
+        color: theme.color.primary,
+        outsideOpacity: 0,
+      })};
+    `,
+  })[variant]}
   box-sizing: border-box;
   height: 2.5rem;
   flex-shrink: 0;
@@ -26,7 +38,20 @@ const ButtonRoot = styled.button<ButtonRootStyledOptions>`
   cursor: pointer;
 
   &:hover {
-    background-color: ${({ theme }) => lighten(0.1, theme.color.primary)};
+    ${({ variant, theme }) => variant && ({
+      filled: `
+        background-color: ${lighten(0.1, theme.color.primary)};
+      `,
+      outline: `
+        color: ${lighten(0.1, theme.color.primary)};
+        background-color: transparent;
+        ${makeDoubleOutline({
+          color: lighten(0.1, theme.color.primary),
+          outsideOpacity: 0,
+        })};
+      `,
+    })[variant]}
+    background-color: ${({ variant, theme }) => variant === 'filled' && lighten(0.1, theme.color.primary)};
   }
 
   &:focus {
