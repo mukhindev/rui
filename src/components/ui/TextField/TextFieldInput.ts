@@ -5,7 +5,7 @@ const TextFieldInput = styled.input<{ isError: boolean }>`
   font: inherit;
   color: ${({ theme }) => theme.color.text};
   background-color: ${({ theme }) => theme.color.background};
-  box-shadow: inset 0 0 0 1px ${({ theme }) => theme.color.border};
+  box-shadow: inset 0 0 0 2px ${({ theme }) => theme.color.border};
   width: 100%;
   box-sizing: border-box;
   height: 2.5rem;

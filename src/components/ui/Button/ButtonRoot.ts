@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { lighten, darken } from 'polished';
+import styled, { css } from 'styled-components';
+import { lighten, darken, rgba } from 'polished';
 import { makeDoubleOutline } from '@/styled-tools/makeDoubleOutline';
 import { chooseContrastingColor } from '@/styled-tools/chooseContrastingColor';
 
@@ -7,25 +7,48 @@ export interface ButtonRootStyledOptions {
   variant?: 'filled' | 'outline'
 }
 
-const ButtonRoot = styled.button<ButtonRootStyledOptions>`
-  font: inherit;
-  ${({ variant, theme }) => variant && ({
-    filled: `
-      color: ${chooseContrastingColor(
-        [theme.color.white, theme.color.black],
-        theme.color.primary,
-      )};
-      background-color: ${theme.color.primary};
-    `,
-    outline: `
-      color: ${theme.color.primary};
+const variants = {
+  filled: css`
+    color: ${({ theme }) => chooseContrastingColor(
+      [theme.color.white, theme.color.black],
+      theme.color.primary,
+    )};
+    background-color: ${({ theme }) => theme.color.primary};
+
+    &:hover {
+      background-color: ${({ theme }) => lighten(0.1, theme.color.primary)};
+    }
+
+    &:active {
+      background-color: ${({ theme }) => darken(0.1, theme.color.primary)};
+    }
+  `,
+
+  outline: css`
+    color: ${({ theme }) => theme.color.primary};
+    background-color: transparent;
+    ${({ theme }) => makeDoubleOutline({
+      color: theme.color.primary,
+      outsideOpacity: 0,
+    })};
+
+    &:hover {
+      color: ${({ theme }) => lighten(0.1, theme.color.primary)};
       background-color: transparent;
-      ${makeDoubleOutline({
-        color: theme.color.primary,
+      ${({ theme }) => makeDoubleOutline({
+        color: lighten(0.1, theme.color.primary),
         outsideOpacity: 0,
       })};
-    `,
-  })[variant]}
+    }
+
+    &:active {
+      background-color: ${({ theme }) => rgba(theme.color.primary, 0.1)};
+    }
+  `,
+};
+
+const ButtonRoot = styled.button<ButtonRootStyledOptions>`
+  font: inherit;
   box-sizing: border-box;
   height: 2.5rem;
   flex-shrink: 0;
@@ -37,29 +60,10 @@ const ButtonRoot = styled.button<ButtonRootStyledOptions>`
   transition-duration: 0.15s;
   cursor: pointer;
 
-  &:hover {
-    ${({ variant, theme }) => variant && ({
-      filled: `
-        background-color: ${lighten(0.1, theme.color.primary)};
-      `,
-      outline: `
-        color: ${lighten(0.1, theme.color.primary)};
-        background-color: transparent;
-        ${makeDoubleOutline({
-          color: lighten(0.1, theme.color.primary),
-          outsideOpacity: 0,
-        })};
-      `,
-    })[variant]}
-    background-color: ${({ variant, theme }) => variant === 'filled' && lighten(0.1, theme.color.primary)};
-  }
+  ${({ variant }) => variants[variant!]};
 
   &:focus {
     ${({ theme }) => makeDoubleOutline(theme.color.primary)};
-  }
-
-  &:active {
-    background-color: ${({ theme }) => darken(0.1, theme.color.primary)};
   }
 
   &:disabled {
