@@ -53,17 +53,17 @@ export interface MarkdownRootStyledOptions {
 const MarkdownRoot = styled.div<MarkdownRootStyledOptions>`
   line-height: 1.5;
 
-  & h1 {
+  & h1:not([data-semantics="heading"]) {
     ${baseHeadingStyles};
     font-size: 2.5rem;
   }
 
-  & h2 {
+  & h2:not([data-semantics="heading"]) {
     ${baseHeadingStyles};
     font-size: 1.75rem;
   }
 
-  & h3 {
+  & h3:not([data-semantics="heading"]) {
     ${baseHeadingStyles};
     font-size: 1.25rem;
   }

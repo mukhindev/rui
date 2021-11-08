@@ -9,6 +9,10 @@ interface HeadingProps extends HeadingStyledOptions {
   children?: React.ReactNode,
   h1?: boolean,
   h2?: boolean,
+  h3?: boolean,
+  h4?: boolean,
+  h5?: boolean,
+  h6?: boolean,
 }
 
 const Heading: React.FC<HeadingProps> = (props) => {
@@ -17,6 +21,10 @@ const Heading: React.FC<HeadingProps> = (props) => {
     children,
     h1,
     h2,
+    h3,
+    h4,
+    h5,
+    h6,
     ...other
   } = props;
 
@@ -28,6 +36,22 @@ const Heading: React.FC<HeadingProps> = (props) => {
 
   if (h2) {
     HeadingRootComponent = HeadingRoot.H2;
+  }
+
+  if (h3) {
+    HeadingRootComponent = HeadingRoot.H3;
+  }
+
+  if (h4) {
+    HeadingRootComponent = HeadingRoot.H4;
+  }
+
+  if (h5) {
+    HeadingRootComponent = HeadingRoot.H5;
+  }
+
+  if (h6) {
+    HeadingRootComponent = HeadingRoot.H6;
   }
 
   return (

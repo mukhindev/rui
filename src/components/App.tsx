@@ -10,6 +10,7 @@ import Button from '@/components/ui/Button';
 import Heading from '@/components/ui/Heading';
 import Markdown from '@/components/shared/Markdown';
 
+import HeadingStand from '@/components/docs/HeadingStand.mdx';
 import TextFieldStand from '@/components/docs/TextFieldStand.mdx';
 import ButtonStand from '@/components/docs/ButtonStand.mdx';
 import TransitionWrapperStand from '@/components/docs/TransitionWrapperStand.mdx';
@@ -58,6 +59,7 @@ function App() {
 
         <BodyWrapper>
           <Markdown>
+            <HeadingStand />
             <TextFieldStand />
             <ButtonStand />
             <TransitionWrapperStand />
