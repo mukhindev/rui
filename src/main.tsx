@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import './main.css';
 
-import App from './components/App';
+import App from './components/Polygon';
 
 ReactDOM.render(
   <React.StrictMode>
