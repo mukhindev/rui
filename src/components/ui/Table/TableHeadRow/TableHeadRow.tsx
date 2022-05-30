@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { TableHeadRowContext } from '../context';
 
 import TableHeadRowRoot from './TableHeadRowRoot';
 
@@ -14,13 +15,19 @@ const TableHeadRow: React.FC<TableHeadRowProps> = (props) => {
     ...other
   } = props;
 
+  const [value] = useState({
+    isHeadRow: true,
+  });
+
   return (
     <TableHeadRowRoot
       data-semantics="table-head-row"
       className={mix}
       {...other}
     >
-      {children}
+      <TableHeadRowContext.Provider value={value}>
+        {children}
+      </TableHeadRowContext.Provider>
     </TableHeadRowRoot>
   );
 };

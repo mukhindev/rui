@@ -25,16 +25,14 @@ function Example1() {
   return (
     <Table data={users}>
       <TableHeadRow>
-        <TableCell>
-          <div>ID</div>
-        </TableCell>
-        <TableCell>Имя</TableCell>
+        <TableCell>ID</TableCell>
+        <TableCell flexGrow={1}>Имя</TableCell>
         <TableCell>Работа</TableCell>
       </TableHeadRow>
       <TableMap>
         <TableRow>
           <TableCell>{(value: User) => value.id}</TableCell>
-          <TableCell>{(value: User) => value.name}</TableCell>
+          <TableCell flexGrow={1}>{(value: User) => value.name}</TableCell>
           <TableCell>{(value: User) => value.job}</TableCell>
         </TableRow>
       </TableMap>

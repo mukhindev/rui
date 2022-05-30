@@ -31,13 +31,22 @@ const Table: React.FC<TableProps> = (props) => {
     setColumnWidths(columnWidthsRef.current);
   }, []);
 
+  const updateWidth = useCallback(() => {}, []);
+
   return (
     <TableRoot
       data-semantics="table"
       className={mix}
       {...other}
     >
-      <TableContext.Provider value={{ data, handleCell, columnWidths }}>
+      <TableContext.Provider
+        value={{
+          data,
+          columnWidths,
+          handleCell,
+          updateWidth,
+        }}
+      >
         {children}
       </TableContext.Provider>
     </TableRoot>
